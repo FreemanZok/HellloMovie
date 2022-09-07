@@ -1,17 +1,15 @@
 <template>
   <div class="home">
-    hi this is alizoka
-   
+    <HeaderSearch />
   </div>
 </template>
 
 <script>
-
-
+  import HeaderSearch from "../components/HeaderSearch.vue"
 export default {
   name: 'Home',
   components: {
-    
+    HeaderSearch:HeaderSearch
   }
 }
 </script>
