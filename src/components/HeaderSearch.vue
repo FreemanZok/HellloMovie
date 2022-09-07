@@ -2,7 +2,7 @@
 <template>
     <div class="HeaderSearch">
         <div class="background">
-
+            HELLO HEADER
         </div>
     </div>
 </template>
@@ -17,7 +17,7 @@ export default {
 </script>
   
 
-<style scoped>
+<style lang="scss" scoped>
 .HeaderSearch {
     background: gray;
 }
