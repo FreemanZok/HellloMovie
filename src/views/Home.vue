@@ -1,6 +1,5 @@
 <template>
   <div class="home">
-    hi hello
     <HeaderSearch />
   </div>
 </template>

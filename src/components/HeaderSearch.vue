@@ -1,9 +1,18 @@
 
 <template>
     <div class="HeaderSearch">
-        <div class="background">
-            HELLO HEADER
+        <div class="my-card my-curve my-container">
+            <div class="background my-wrapper go-left">
+                <div class="inner ">
+                    <!-- <span class="m-right-1 gray">Search by release date:</span> -->
+                    <span class="input-wrapper">
+                        <input placeholder="Search by release date..." class="my-input" type="text">
+                    </span>
+                    <button class="my-button">Search It !</button>
+                </div>
+            </div>
         </div>
+
     </div>
 </template>
   
@@ -19,7 +28,72 @@ export default {
 
 <style lang="scss" scoped>
 .HeaderSearch {
-    background: gray;
+    .go-left{
+        text-align: left;
+    }
+    .my-card {
+        box-shadow: 0 0 4px #a0a0a0;
+        min-height: 30px;
+        background: #e8e8e8;
+
+        &.my-curve {
+            border-radius: 10px;
+        }
+    }
+
+    .inner {
+    
+        display: inline-block;
+    }
+}
+
+.my-container {
+    max-width: 1024px;
+    margin: 0 auto;
+}
+.input-wrapper{
+    margin-right: 10px;
+}
+.my-button {
+    background: white;
+    border: none !important;
+    padding: 10px 20px;
+    border-radius: 20px;
+    color: #5396ff;
+    font-weight: 600;
+    cursor: pointer;
+    transition: .2s;
+
+    &:hover {
+        box-shadow: 0 0 5px grey;
+        color:#3478e3;
+    }
+}
+
+.my-wrapper {
+    padding: 17px 25px;
+}
+
+.my-input {
+    min-height: 30px;
+    border-radius: 17px;
+    outline: none !important;
+    border: none;
+    padding: 2px 20px;
+    transition: .2s;
+    min-width: 240px;
+
+    &:focus{
+        box-shadow: 0 0 5px gray;
+    }
+}
+
+.m-right-1 {
+    margin-right: 10px;
+}
+
+.gray {
+    color: gray;
 }
 </style>
   
