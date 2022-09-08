@@ -8,6 +8,9 @@
                         <img :src='require(`@/assets/img/${my_src}`)' alt="">
                     </div>
                 </div>
+                <div class="right-card">
+                    hello
+                </div>
             </div>
         </div>
 
@@ -32,7 +35,12 @@ export default {
 .clearfix {
     overflow: auto;
 }
-
+.right-card{
+    float: right;
+    text-align: left;
+    width: 57%;
+    height: 100%;
+}
 .clearfix::after {
     content: "";
     clear: both;
@@ -41,17 +49,19 @@ export default {
 
 .img-wrapper {
     overflow: hidden;
-    height: 150px;
+    height: 170px;
+    max-width: 130px;
+
 }
+
 
 .left-card {
     float: left;
-    width: 50%;
+    width: 43%;
 
     img {
         width: 100%;
         height: 100%;
-        max-width: 120px;
     }
 }
 
@@ -81,6 +91,7 @@ export default {
     box-shadow: 0 0 4px #a0a0a0;
     border-radius: 17px;
     background: #e8e8e8;
+
 }
 
 .background {
