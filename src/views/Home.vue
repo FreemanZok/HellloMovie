@@ -1,9 +1,6 @@
 <template>
   <div class="home my-container">
-    <HeaderSearch class="go-bottom" />
-    <h1 class="text-3xl font-bold underline text-clifford text-cyan-600	">
-      Test Tailwind!
-    </h1>
+    <HeaderHome class="go-bottom" />
     <div class="home-body">
       <div v-for="bab in 9" :key="bab" class="box-part">
         <littleMovie :my_src="my_src" />
@@ -13,12 +10,12 @@
 </template>
 
 <script>
-import HeaderSearch from "../components/HeaderSearch.vue"
+import HeaderHome from "../components/HeaderHome.vue"
 import littleMovie from "../components/littleMovie.vue"
 export default {
   name: 'Home',
   components: {
-    HeaderSearch,
+    HeaderHome,
     littleMovie,
   },
   data(){

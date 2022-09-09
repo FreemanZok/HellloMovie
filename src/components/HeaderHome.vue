@@ -1,6 +1,6 @@
 
 <template>
-    <div class="HeaderSearch">
+    <div class="HeaderHome">
         <div class="my-card my-curve my-container">
             <div class="background my-wrapper go-left">
                 <div class="inner ">
@@ -10,6 +10,9 @@
                     </span>
                     <button class="my-button">Search It !</button>
                 </div>
+                <div class="title-page">
+
+                </div>
             </div>
         </div>
     </div>
@@ -17,7 +20,7 @@
   
 <script>
 export default {
-    name: 'HeaderSearch',
+    name: 'HeaderHome',
     props: {
         msg: String
     }
@@ -26,7 +29,7 @@ export default {
   
 
 <style lang="scss" scoped>
-.HeaderSearch {
+.HeaderHome {
     .go-left{
         text-align: left;
     }
@@ -74,12 +77,12 @@ export default {
 }
 
 .my-input {
-    min-height: 30px;
-    border-radius: 17px;
+    min-height: 44px;
+    border-radius: 20px;
     outline: none !important;
     border: none;
     padding: 2px 20px;
-    transition: .2s;
+    transition: 0.2s;
     min-width: 240px;
 
     &:focus{

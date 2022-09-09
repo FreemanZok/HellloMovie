@@ -8,8 +8,8 @@
                         <img :src='require(`@/assets/img/${my_src}`)' alt="">
                     </div>
                 </div>
-                <div class="right-card">
-                    hello
+                <div class="right-card pl-1 pt-2 font-semibold">
+                    hello TITLE
                 </div>
             </div>
         </div>
