@@ -10,6 +10,8 @@
                 </div>
                 <div class="title-movie right-card pl-3 pt-2 font-semibold">
                     <h2 class=" mb-6">Hello Title</h2>
+                    <font-awesome-icon icon="user-secret"></font-awesome-icon>
+
                     <div>
                         <p class="font-normal	text-sm mb-1">by</p>
                         <div class="directors">
