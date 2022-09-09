@@ -2,15 +2,22 @@
 <template>
     <div class="littleMovie">
         <div class="my-card my-curve my-container ">
-            <div class="background my-wrapper go-left clearfix">
+            <div class="background my-wrapper go-left clearfix movie-card">
                 <div class="left-card">
                     <div class="img-wrapper">
                         <img :src='require(`@/assets/img/${my_src}`)' alt="">
                     </div>
                 </div>
-                <div class="right-card pl-1 pt-2 font-semibold">
-                    hello TITLE
+                <div class="title-movie right-card pl-3 pt-2 font-semibold">
+                    <h2 class=" mb-6">Hello Title</h2>
+                    <div>
+                        <p class="font-normal	text-sm mb-1">by</p>
+                        <div class="directors">
+                            <h3 class="font-semibold	text-sm">Jamse Cameron</h3>
+                        </div>
+                    </div>
                 </div>
+
             </div>
         </div>
 
@@ -22,25 +29,37 @@ export default {
     name: 'littleMovie',
     props: ["my_src"],
     computed: {
-       
+
     },
-    methods:{
-        
+    methods: {
+
     }
 }
 </script>
   
 
 <style lang="scss" scoped>
+.title-movie {}
+
 .clearfix {
     overflow: auto;
 }
-.right-card{
+
+.right-card {
     float: right;
     text-align: left;
     width: 57%;
     height: 100%;
 }
+
+.movie-card:hover {
+    box-shadow: 2px 2px 4px #b1c6e5 !important;
+    cursor: pointer;
+    h2{
+        color: #b7f9ff;
+    }
+}
+
 .clearfix::after {
     content: "";
     clear: both;
@@ -71,7 +90,7 @@ export default {
     }
 
     .my-card {
-
+        color: #767676;
         min-height: 30px;
         padding: 8px 20px;
 
