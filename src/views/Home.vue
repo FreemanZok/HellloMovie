@@ -1,6 +1,9 @@
 <template>
   <div class="home my-container">
     <HeaderSearch class="go-bottom" />
+    <h1 class="text-3xl font-bold underline text-clifford text-cyan-600	">
+      Test Tailwind!
+    </h1>
     <div class="home-body">
       <div v-for="bab in 9" :key="bab" class="box-part">
         <littleMovie :my_src="my_src" />
