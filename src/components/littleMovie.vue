@@ -9,14 +9,23 @@
                     </div>
                 </div>
                 <div class="title-movie right-card pl-3 pt-2 font-semibold">
-                    <h2 class=" mb-6">Hello Title</h2>
-                    <font-awesome-icon icon="user-secret"></font-awesome-icon>
+                    <h2 class=" mb-6 text-sky-700	">Hello Title</h2>
 
-                    <div>
-                        <p class="font-normal	text-sm mb-1">by</p>
+                    <div class="mb-2">
+                        <p class="font-normal my-small">by</p>
                         <div class="directors">
-                            <h3 class="font-semibold	text-sm">Jamse Cameron</h3>
+                            <h4 class="font-semibold	text-sm">Jamse Cameron</h4>
                         </div>
+                    </div>
+                    <div class="text-xs font-normal mb-2">
+                        <font-awesome-icon icon="calendar"></font-awesome-icon>
+                        <span class="pl-3">2022.10.12</span>
+                    </div>
+                    <div>
+                        <ul class="genre-list text-xs font-normal">
+                            <li class="inline-block mr-2">Sci-Fi</li>
+                            <li class="inline-block mr-2">Drama</li>
+                        </ul>
                     </div>
                 </div>
 
@@ -43,6 +52,18 @@ export default {
 <style lang="scss" scoped>
 .title-movie {}
 
+.genre-list {
+    color:rgb(178 151 15);
+    font-weight: 600;
+    li::before {
+        content: "•";
+        font-weight: bold;
+        display: inline-block;
+        width: 6px;
+        margin-left: 0px;
+    }
+}
+
 .clearfix {
     overflow: auto;
 }
@@ -57,11 +78,14 @@ export default {
 .movie-card:hover {
     box-shadow: 2px 2px 4px #b1c6e5 !important;
     cursor: pointer;
-    h2{
-        color: #b7f9ff;
+
+    h2 {
+        color: #48b2ec  ;
     }
 }
-
+.my-small{
+    font-size: 11px;
+}
 .clearfix::after {
     content: "";
     clear: both;
