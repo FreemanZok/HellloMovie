@@ -9,12 +9,12 @@
                     </div>
                 </div>
                 <div class="title-movie right-card pl-3 pt-2 font-semibold">
-                    <h2 class=" mb-6 text-sky-700	">Hello Title</h2>
+                    <h2 class=" mb-4 text-sky-700	">Hello Title</h2>
 
                     <div class="mb-2">
                         <p class="font-normal my-small">by</p>
                         <div class="directors">
-                            <h4 class="font-semibold text-sm">Jamse Cameron</h4>
+                            <h4 class="font-semibold text-sm mb-5">Jamse Cameron</h4>
                         </div>
                     </div>
                     <div class="text-xs font-normal mb-2">

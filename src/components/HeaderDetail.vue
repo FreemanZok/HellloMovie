@@ -2,7 +2,7 @@
 <template>
     <div class="HeaderDetail">
         <div class="my-card my-curve my-container">
-            <div class="background my-wrapper go-left">
+            <div class="background my-wrapper go-right">
                 <div class="inner ">
                     <!-- <span class="m-right-1 gray">Search by release date:</span> -->
                     <!-- <span class="input-wrapper">
@@ -35,8 +35,8 @@ export default {
 
 <style lang="scss" scoped>
 .HeaderDetail {
-    .go-left {
-        text-align: left;
+    .go-right {
+        text-align: right;
     }
 
     .my-card {

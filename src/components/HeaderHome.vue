@@ -2,7 +2,7 @@
 <template>
     <div class="HeaderHome">
         <div class="my-card my-curve my-container">
-            <div class="background my-wrapper go-left">
+            <div class="background my-wrapper go-right ">
                 <div class="inner ">
                     <!-- <span class="m-right-1 gray">Search by release date:</span> -->
                     <span class="input-wrapper">
@@ -10,10 +10,11 @@
                     </span>
                     <button class="my-button">Search It !</button>
                 </div>
-                <div class="title-page">
-
+                <div class="title-page float-left mt-2">
+                    <h1 class="text-sky-600	text-2xl	">Movies</h1>
                 </div>
             </div>
+
         </div>
     </div>
 </template>
@@ -30,8 +31,9 @@ export default {
 
 <style lang="scss" scoped>
 .HeaderHome {
-    .go-left{
-        text-align: left;
+    
+    .go-right{
+        text-align: right;
     }
     .my-card {
         box-shadow: 0 0 4px #a0a0a0;
@@ -44,7 +46,6 @@ export default {
     }
 
     .inner {
-    
         display: inline-block;
     }
 }
