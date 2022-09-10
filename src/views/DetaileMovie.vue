@@ -1,7 +1,6 @@
 <template>
-  <div class="DetaileMovie">
-    <HeaderDetail  class="mb-10"/>
-
+  <div class="DetaileMovie pt-8">
+    <HeaderDetail class="mb-10"/>
     <BodyDetail/>
   </div>
 </template>
@@ -16,30 +15,30 @@ export default {
   },
   data() {
     return {
-      my_src: "61n-olilSdL._AC_SY679_.jpg",
+      movie_info: "61n-olilSdL._AC_SY679_.jpg",
       my_token:"f62f750b70a8ef11dad44670cfb6aa57"
     }
   },
   methods: {
+    // getList() {
+    //   this.axios.get("https://randomuser.me/api/?results=50&seed=1df71d3e5568067e").then((response) => {
+    //     console.log(response.data)
+    //   })
+    // },
     getList() {
-      this.axios.get("https://randomuser.me/api/?results=50&seed=1df71d3e5568067e").then((response) => {
-        console.log(response.data)
-      })
-    },
-    getTest() {
       this.axios.get("https://api.themoviedb.org/3/certification/movie/list?api_key=f62f750b70a8ef11dad44670cfb6aa57").then((response) => {
         console.log("fuckin alizoka",response.data)
       })
     },
-    getApi_1() {
+
+    getApi_2() {
       this.axios.get("https://api.themoviedb.org/3/movie/{movie_id}?api_key=f62f750b70a8ef11dad44670cfb6aa57&language=en-US").then((response) => {
         console.log("fuckin alizoka",response.data)
       })
     },
   },
   mounted() {
-    this.getList();
-    this.getTest()
+    // this.getApi_1()
   }
 }
 </script>

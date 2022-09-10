@@ -1,12 +1,11 @@
 <template>
-  <div class="home my-container">
+  <div class="home my-container pt-8">
     <HeaderHome class="go-bottom" />
     <div class="home-body">
-      <div v-for="bab in 9" :key="bab" class="box-part">
+      <div v-for="bab in my_list" :key="bab" class="box-part">
         <router-link to="/detaile-movie">
-           <littleMovie :my_src="my_src" />
+          <littleMovie :movie_info="movie_info" />
         </router-link>
-       
       </div>
     </div>
   </div>
@@ -21,25 +20,29 @@ export default {
     HeaderHome,
     littleMovie,
   },
-  data(){
-    return{
-      my_src:"61n-olilSdL._AC_SY679_.jpg"
+  data() {
+    return {
+      movie_info: "61n-olilSdL._AC_SY679_.jpg",
+      my_token: "f62f750b70a8ef11dad44670cfb6aa57",
+      my_list:null,
     }
   },
-  methods:{
+  methods: {
     getList() {
-      this.axios.get("https://randomuser.me/api/?results=50&seed=1df71d3e5568067e").then((response) => {
-        console.log(response.data)
+      this.axios.get("https://api.themoviedb.org/3/discover/movie?api_key=" + this.my_token + "&language=en-US&sort_by=popularity.desc&include_adult=false&include_video=false&page=1&with_watch_monetization_types=flatrate").then((response) => {
+        console.log("fuckin alizoka", response.data)
+        this.my_list=response.data.results
+
       })
-    }
+    },
   },
-  mounted(){
+  mounted() {
     this.getList();
   }
 }
 </script>
 <style lang="scss" scoped>
-.home-body{
+.home-body {
   margin: 0 -22px;
 }
 
