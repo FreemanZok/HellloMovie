@@ -11,7 +11,7 @@
                     <button class="my-button">Search It !</button>
                 </div>
                 <div class="title-page float-left mt-2">
-                    <h1 class="text-sky-600	text-2xl	">Movies</h1>
+                    <h1 class="text-sky-600	text-2xl my-blue">Movies</h1>
                 </div>
             </div>
 
@@ -50,10 +50,6 @@ export default {
     }
 }
 
-.my-container {
-    max-width: 1024px;
-    margin: 0 auto;
-}
 .input-wrapper{
     margin-right: 10px;
 }

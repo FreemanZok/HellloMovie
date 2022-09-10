@@ -2,16 +2,12 @@
 <template>
     <div class="HeaderDetail">
         <div class="my-card my-curve my-container">
-            <div class="background my-wrapper go-right">
+            <div class="background my-wrapper go-right clearfix">
                 <div class="inner ">
-                    <!-- <span class="m-right-1 gray">Search by release date:</span> -->
-                    <!-- <span class="input-wrapper">
-                        <input placeholder="Search by release date..." class="my-input" type="text">
-                    </span> -->
                     <button @click="goHome()" class="my-button"> Back !</button>
                 </div>
-                <div class="title-page">
-
+                <div class="title-page float-left">
+                    <h1 class="text-sky-600	text-2xl my-blue mt-2">Guardians of the Galaxy</h1>
                 </div>
             </div>
         </div>
@@ -55,10 +51,7 @@ export default {
     }
 }
 
-.my-container {
-    max-width: 1024px;
-    margin: 0 auto;
-}
+
 
 .input-wrapper {
     margin-right: 10px;

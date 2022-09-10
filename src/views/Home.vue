@@ -3,7 +3,10 @@
     <HeaderHome class="go-bottom" />
     <div class="home-body">
       <div v-for="bab in 9" :key="bab" class="box-part">
-        <littleMovie :my_src="my_src" />
+        <router-link to="/detaile-movie">
+           <littleMovie :my_src="my_src" />
+        </router-link>
+       
       </div>
     </div>
   </div>
@@ -38,20 +41,6 @@ export default {
 <style lang="scss" scoped>
 .home-body{
   margin: 0 -22px;
-}
-.clearfix {
-  overflow: auto;
-}
-
-.clearfix::after {
-  content: "";
-  clear: both;
-  display: table;
-}
-
-.my-container {
-  max-width: 1024px;
-  margin: 0 auto;
 }
 
 .my-flex {

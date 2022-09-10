@@ -94,7 +94,7 @@ export default {
 
 .img-wrapper {
     overflow: hidden;
-    height: 170px;
+    height: 195px;
     max-width: 130px;
 
 }
@@ -126,10 +126,7 @@ export default {
     }
 }
 
-.my-container {
-    max-width: 1024px;
-    margin: 0 auto;
-}
+
 
 .my-wrapper {
     // padding: 17px 25px;
