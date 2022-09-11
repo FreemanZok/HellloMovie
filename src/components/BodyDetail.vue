@@ -83,7 +83,8 @@
                         Credit:
                     </div>
                     <div class="text-md font-color">
-                        Zoe Saldanna , Vin Diesel , Chris Pratt , Bradley Cooper , Lee Pace , Zoe Saldanna , Vin Diesel , Chris Pratt , Bradley Cooper , Lee Pace and 19 more.
+                        Zoe Saldanna , Vin Diesel , Chris Pratt , Bradley Cooper , Lee Pace , Zoe Saldanna , Vin Diesel
+                        , Chris Pratt , Bradley Cooper , Lee Pace and 19 more.
                     </div>
                 </div>
             </div>
@@ -94,9 +95,34 @@
 <script>
 export default {
     name: 'BodyDetail',
-    methods: {
+    props:["movie_info"],
+    data() {
+        return {
 
+        }
     },
+    methods: {
+        getThisMovie() {
+            this.axios.get("https://api.themoviedb.org/3/movie/" + this.currentId + "?api_key=f62f750b70a8ef11dad44670cfb6aa57&language=en-US").then((response) => {
+                console.log("my movie", response.data)
+                this.movie_info = response.data
+            })
+        },
+    },
+    computed: {
+        currentId() {
+            let myPath = this.$route.path
+            return myPath.split("movie/")[1]
+        }
+    },
+    mounted: {
+        computed: {
+            currentId() {
+                let myPath = this.$route.path
+                return myPath.split("movie/")[1]
+            }
+        },
+    }
 }
 </script>
   

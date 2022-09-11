@@ -5,19 +5,22 @@
             <div class="background my-wrapper go-left clearfix movie-card">
                 <div class="left-card">
                     <div class="img-wrapper">
-                        <img :src='require(`@/assets/img/${movie_info}`)' alt="">
+                        <!-- <img :src='require(`@/assets/img/${movie_info}`)' alt=""> -->
+                        <img :src='movie_info.poster_path' alt="">
                     </div>
                 </div>
                 <div class="title-movie right-card pl-3 pt-2 font-semibold ">
-                    <h2 class=" mb-4 font-color">Avatar</h2>
-                    <div class="mb-2">
-                        <p class="font-normal my-small">by</p>
-                        <div class="directors">
-                            <h4 class="font-semibold text-sm mb-5">Jamse Cameron</h4>
-                        </div>
-                    </div>
+                    <h2 class=" mb-4 font-color mt-4">{{movie_info.title}}</h2>
+
 
                     <div class="text-xs font-normal mb-2 go-bottom">
+                        <div class="mb-2">
+                            <!-- <font-awesome-icon icon="thumbs-up"></font-awesome-icon> -->
+                            <div class="pb-2 inline-block">
+                                <font-awesome-icon icon="star"></font-awesome-icon>
+                            </div>
+                            <span class="ml-1 inline-block">{{movie_info.vote_average}}</span>
+                        </div>
                         <div class=" genres mb-2">
                             <ul class="genre-list text-xs font-normal">
                                 <li class="inline-block mr-2">Sci-Fi</li>
@@ -26,13 +29,12 @@
                         </div>
                         <div>
                             <font-awesome-icon icon="calendar"></font-awesome-icon>
-                            <span class="pl-3">2022.10.12</span>
+                            <span class="pl-3">{{movie_info.release_date}}</span>
                         </div>
                     </div>
                 </div>
             </div>
         </div>
-
     </div>
 </template>
   
@@ -40,11 +42,17 @@
 export default {
     name: 'littleMovie',
     props: ["movie_info"],
+    data() {
+
+    },
     computed: {
 
     },
     methods: {
 
+    },
+    mounted() {
+        console.log("movie_info", this.movie_info)
     }
 }
 </script>
@@ -89,8 +97,9 @@ export default {
 
 .movie-card:hover {
 
-    box-shadow: 2px 2px 4px #b1c6e5 !important;
+    box-shadow: 2px 2px 4px #989898 !important;
     cursor: pointer;
+    transition: .3s;
 
     h2 {
         color: #082ea1;

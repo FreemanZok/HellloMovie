@@ -1,7 +1,9 @@
 <template>
   <div class="DetaileMovie pt-8">
-    <HeaderDetail class="mb-10"/>
-    <BodyDetail/>
+    <HeaderDetail :myTitle="getTitle()" class="mb-10" />
+    <BodyDetail />
+    <router-view></router-view>
+
   </div>
 </template>
 <script>
@@ -15,30 +17,40 @@ export default {
   },
   data() {
     return {
-      movie_info: "61n-olilSdL._AC_SY679_.jpg",
-      my_token:"f62f750b70a8ef11dad44670cfb6aa57"
+      movie_info: {
+        title:""
+      },
+      my_token: "f62f750b70a8ef11dad44670cfb6aa57",
     }
   },
   methods: {
-    // getList() {
-    //   this.axios.get("https://randomuser.me/api/?results=50&seed=1df71d3e5568067e").then((response) => {
-    //     console.log(response.data)
-    //   })
-    // },
-    getList() {
-      this.axios.get("https://api.themoviedb.org/3/certification/movie/list?api_key=f62f750b70a8ef11dad44670cfb6aa57").then((response) => {
-        console.log("fuckin alizoka",response.data)
+    getThisMovie() {
+      this.axios.get("https://api.themoviedb.org/3/movie/" + this.currentId + "?api_key=f62f750b70a8ef11dad44670cfb6aa57&language=en-US").then((response) => {
+        console.log("my movie", response.data)
+        this.movie_info = response.data;
       })
     },
-
-    getApi_2() {
-      this.axios.get("https://api.themoviedb.org/3/movie/{movie_id}?api_key=f62f750b70a8ef11dad44670cfb6aa57&language=en-US").then((response) => {
-        console.log("fuckin alizoka",response.data)
-      })
+    getTitle(){
+      return this.movie_info.title
     },
   },
+  computed: {
+    currentId() {
+      let myPath = this.$route.path
+      return myPath.split("movie/")[1]
+    },
+  },
+  watch:{
+    movie_info(newVal){
+      if(Object.keys(newVal).length){
+        this.getTitle();
+      }
+    }
+  },
   mounted() {
-    // this.getApi_1()
+    
+    console.log(this.currentId)
+    this.getThisMovie()
   }
 }
 </script>

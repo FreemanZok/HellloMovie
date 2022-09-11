@@ -7,7 +7,7 @@
                     <button @click="goHome()" class="my-button"> Back !</button>
                 </div>
                 <div class="title-page float-left">
-                    <h1 class="text-sky-600	text-2xl my-blue mt-2">Guardians of the Galaxy</h1>
+                    <h1 class="text-sky-600	text-2xl my-blue mt-2">{{myTitle}}</h1>
                 </div>
             </div>
         </div>
@@ -17,12 +17,10 @@
 <script>
 export default {
     name: 'HeaderDetail',
-    props: {
-        msg: String
-    },
+    props: ["myTitle"],
     methods: {
         goHome(){
-            this.$router.push("/")
+            this.$router.push({ path: `/` })
         }  
     },
 }

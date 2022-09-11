@@ -1,28 +1,34 @@
 import Vue from 'vue'
 import VueRouter from 'vue-router'
 import Home from '../views/Home.vue'
-import DetaileMovie from '../views/DetaileMovie.vue'
 
-Vue.use(VueRouter)
+Vue.use(VueRouter);
 
 const routes = [
   {
-    path: '/',
-    name: 'Home',
-    component: Home
+    path: "/",
+    name: "Home",
+    component: Home,
   },
+
   {
-    path: '/detaile-movie',
-    name: 'DetaileMovie',
-    component: DetaileMovie
+    path: "/detaile-movie",
+    name: "DetaileMovie",
+    component: () => import("../views/DetaileMovie.vue"),
+    children: [
+      {
+        path: ":id",
+        component: () => import("../views/DetaileMovie.vue"),
+      },
+      
+    ],
   },
- 
-]
+
+];
 
 const router = new VueRouter({
-  mode: 'history',
-  base: process.env.BASE_URL,
-  routes
-})
+  mode: "history",
+  routes,
+});
 
-export default router
+export default router;
