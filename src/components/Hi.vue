@@ -5,7 +5,7 @@
             <div class="background my-wrapper go-left clearfix movie-card">
                 <div class="left-card">
                     <div class="img-wrapper">
-                        <img :src='movie_info.poster_path' alt="" >
+                        <img :src='base_url + movie_info.poster_path' alt="" >
                     </div>
                 </div>
                 <div class="title-movie right-card pl-3 pt-2 font-semibold ">
@@ -38,6 +38,11 @@
 export default {
     name: 'littleMovie',
     props: {movie_info: Object},
+    data(){
+        return{
+            base_url:"my_base_url"
+        }
+    }
 }
 </script>
   
