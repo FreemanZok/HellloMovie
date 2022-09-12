@@ -1,5 +1,5 @@
 <template>
-  <div class="home my-container pt-8">
+  <div class="home my-container pt-7">
     <HeaderHome class="go-bottom" />
     <div class="home-body">
       <div v-if="myLoading">
@@ -23,6 +23,7 @@
           </router-link>
         </div>
       </div>
+      <div class="pagination"></div>
     </div>
 
     <router-view></router-view>

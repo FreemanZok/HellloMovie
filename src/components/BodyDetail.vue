@@ -10,7 +10,7 @@
                     <ul class=" h-full gray-box">
                         <li class="w-100 clearfix font-color mb-4">
                             <div class="float-right">
-                                $170’000’000
+                                ${{movie_info.budget}}
                             </div>
                             <div class="float-left	little-title w-1/3">
                                 Budget
@@ -18,7 +18,7 @@
                         </li>
                         <li class="w-100 clearfix font-color mb-4">
                             <div class="float-right">
-                                $772’776’600
+                                ${{movie_info.revenue}}
                             </div>
                             <div class="float-left	little-title w-1/3">
                                 Revenue
@@ -34,7 +34,7 @@
                         </li>
                         <li class="w-100 clearfix font-color mb-4">
                             <div class="float-right">
-                                7.9 (23563 votes)
+                                {{movie_info.vote_average}} ({{movie_info.vote_count}} votes)
                             </div>
                             <div class="float-left	little-title w-1/3">
                                 Score
@@ -42,7 +42,9 @@
                         </li>
                         <li class="w-100 clearfix font-color mb-4">
                             <div class="float-right">
-                                Action, Science Fiction, Adventure
+                                <span class="font13" v-for="(genre, index) in movie_info.genres " :key="index">
+                                    {{genre.name}},
+                                </span>
                             </div>
                             <div class="float-left	little-title w-1/3">
                                 Genres
@@ -68,16 +70,7 @@
                 </div>
             </div>
             <div class="mt-6 text-left">
-                <p class="font-color text-md	">
-                    Light years from Earth, 26 years after being abducted, Peter Quill finds himself the prime target of
-                    a
-                    manhunt after discovering an orb wanted by Ronan the Accuser. Light years from Earth, 26 years after
-                    being abducted, Peter Quill finds himself the prime target of a manhunt after discovering an orb
-                    wanted
-                    by Ronan the Accuser. Light years from Earth, 26 years after being abducted, Peter Quill finds
-                    himself
-                    the prime target of a manhunt after discovering an orb wanted by Ronan the Accuser.
-                </p>
+                <p class="font-color text-md">{{movie_info.overview}}</p>
                 <div class="mt-4 mb-10">
                     <div class="text-lg font-color font-semibold">
                         Credit:
@@ -95,7 +88,7 @@
 <script>
 export default {
     name: 'BodyDetail',
-    props:["movie_info"],
+    props: ["movie_info"],
     data() {
         return {}
     },

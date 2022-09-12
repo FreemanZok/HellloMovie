@@ -4,10 +4,11 @@
         <div class="my-card my-curve my-container">
             <div class="background my-wrapper go-right clearfix">
                 <div class="inner ">
-                    <button @click="goHome()" class="my-button"> Back !</button>
+                    <button @click="goHome()" class="my-button  mt-1"> Back !</button>
                 </div>
                 <div class="title-page float-left">
-                    <h1 class="text-sky-600	text-2xl my-blue mt-2">{{myTitle}}</h1>
+                    <h1 class="text-sky-600	text-2xl my-blue">{{myTitle}}</h1>
+                    <p class="text-left text-sky-700">{{tagline}}</p>
                 </div>
             </div>
         </div>
@@ -17,7 +18,7 @@
 <script>
 export default {
     name: 'HeaderDetail',
-    props: ["myTitle"],
+    props: ["myTitle","tagline"],
     methods: {
         goHome(){
             this.$router.push("/")

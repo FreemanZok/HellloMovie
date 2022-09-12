@@ -1,6 +1,6 @@
 <template>
-  <div class="DetaileMovie pt-8">
-    <HeaderDetail :myTitle="myTitle" class="mb-10" />
+  <div class="DetaileMovie pt-7">
+    <HeaderDetail :myTitle="myTitle" :tagline="tagline" class="mb-7" />
     <BodyDetail :movie_info="movie_info" />
     <router-view></router-view>
   </div>
@@ -21,6 +21,7 @@ export default {
       },
       myTitle: null,
       my_token: "f62f750b70a8ef11dad44670cfb6aa57",
+      tagline:null
     }
   },
   methods: {
@@ -29,6 +30,7 @@ export default {
         console.log("my movie", response.data)
         this.movie_info = response.data;
         this.myTitle = response.data.title
+        this.tagline = response.data.tagline
       })
     },
   },
