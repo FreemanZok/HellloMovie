@@ -1,6 +1,7 @@
-import Vue from 'vue'
-import VueRouter from 'vue-router'
-import Home from '../views/Home.vue'
+import Vue from "vue";
+import VueRouter from "vue-router";
+import Home from "../views/Home.vue";
+import DetaileMovie from "../views/DetaileMovie.vue";
 
 Vue.use(VueRouter);
 
@@ -12,18 +13,10 @@ const routes = [
   },
 
   {
-    path: "/detaile-movie",
+    path: "/detaile-movie/:id",
     name: "DetaileMovie",
-    component: () => import("../views/DetaileMovie.vue"),
-    children: [
-      {
-        path: ":id",
-        component: () => import("../views/DetaileMovie.vue"),
-      },
-      
-    ],
+    component: DetaileMovie,
   },
-
 ];
 
 const router = new VueRouter({

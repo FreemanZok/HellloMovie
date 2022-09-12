@@ -16,32 +16,32 @@
           <span class="sr-only">Loading...</span>
         </div>
       </div>
-      <div v-if="!myLoading">
-        <div v-for="movie in take20Movie" :key="movie" class="box-part">
+      <div v-if="!myLoading && my_list.length">
+        <div v-for="(movie,index) in my_list" :key="index" class="box-part">
           <router-link :to="'/detaile-movie/' + movie.id">
-            <littleMovie :movie_info="movie" />
+            <HI :movie_info="movie" />
           </router-link>
         </div>
       </div>
     </div>
+
     <router-view></router-view>
   </div>
 </template>
 
 <script>
 import HeaderHome from "../components/HeaderHome.vue"
-import littleMovie from "../components/littleMovie.vue"
+import HI from "@/components/Hi.vue"
 export default {
   name: 'Home',
   components: {
     HeaderHome,
-    littleMovie,
+    HI
   },
   data() {
     return {
-      movie_info: { alizoka: "61n-olilSdL._AC_SY679_.jpg" },
       my_token: "f62f750b70a8ef11dad44670cfb6aa57",
-      my_list: null,
+      my_list: [],
       myLoading: false,
     }
   },
@@ -52,17 +52,14 @@ export default {
       // this is just a loading :)  
       setTimeout(() => {
         this.axios.get("https://api.themoviedb.org/3/discover/movie?api_key=" + this.my_token + "&language=en-US&sort_by=popularity.desc&include_adult=false&include_video=false&page=1&with_watch_monetization_types=flatrate").then((response) => {
-          console.log("fuckin alizoka", response.data)
           this.my_list = response.data.results
           this.myLoading = false
         })
       }, 500);
     },
   },
-  computed:{
-    take20Movie(){
-      return this.my_list.slice(0, 20)
-    }
+  computed: {
+
   },
   mounted() {
     this.getList();
@@ -73,12 +70,15 @@ export default {
 .home-body {
   margin: 0 -22px;
 }
+
 .my-flex {
   display: flex;
 }
+
 .go-bottom {
   margin-bottom: 20px;
 }
+
 .box-part {
   width: calc(100% /3);
   float: left;

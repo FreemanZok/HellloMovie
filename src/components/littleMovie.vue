@@ -5,23 +5,19 @@
             <div class="background my-wrapper go-left clearfix movie-card">
                 <div class="left-card">
                     <div class="img-wrapper">
-                        <!-- <img :src='require(`@/assets/img/${movie_info}`)' alt=""> -->
-                        <img :src='movie_info.poster_path' alt="">
+                        <!-- <img :src='movie_info.poster_path' alt="" > -->
                     </div>
                 </div>
                 <div class="title-movie right-card pl-3 pt-2 font-semibold ">
-                    <h2 class=" mb-4 font-color mt-4">{{movie_info.title}}</h2>
-
-
+                    <!-- <h2 class=" mb-4 font-color mt-4">{{movie_info.title}}</h2> -->
                     <div class="text-xs font-normal mb-2 go-bottom">
                         <div class="mb-2">
-                            <!-- <font-awesome-icon icon="thumbs-up"></font-awesome-icon> -->
                             <div class="pb-2 inline-block">
                                 <font-awesome-icon icon="star"></font-awesome-icon>
                             </div>
-                            <span class="ml-1 inline-block">{{movie_info.vote_average}}</span>
+                            <!-- <span class="ml-1 inline-block">{{movie_info.vote_average}}</span> -->
                         </div>
-                        <div class=" genres mb-2">
+                        <div class="genres mb-2">
                             <ul class="genre-list text-xs font-normal">
                                 <li class="inline-block mr-2">Sci-Fi</li>
                                 <li class="inline-block mr-2">Drama</li>
@@ -29,7 +25,7 @@
                         </div>
                         <div>
                             <font-awesome-icon icon="calendar"></font-awesome-icon>
-                            <span class="pl-3">{{movie_info.release_date}}</span>
+                            <!-- <span class="pl-3">{{movie_info.release_date}}</span> -->
                         </div>
                     </div>
                 </div>
@@ -41,19 +37,11 @@
 <script>
 export default {
     name: 'littleMovie',
-    props: ["movie_info"],
-    data() {
-
-    },
-    computed: {
-
-    },
-    methods: {
-
-    },
-    mounted() {
-        console.log("movie_info", this.movie_info)
-    }
+    // props: {movie_info: Object},
+    data() {},
+    computed: {},
+    methods: {},
+    mounted() {}
 }
 </script>
   
@@ -78,23 +66,19 @@ export default {
     position: absolute;
     bottom: 10px;
 }
-
 .clearfix {
     overflow: auto;
 }
-
 .right-card {
     float: right;
     text-align: left;
     width: 57%;
     height: 100%;
 }
-
 .movie-card {
     height: 195px;
     position: relative;
 }
-
 .movie-card:hover {
 
     box-shadow: 2px 2px 4px #989898 !important;
@@ -149,9 +133,6 @@ export default {
         }
     }
 }
-
-
-
 .my-wrapper {
     // padding: 17px 25px;
     box-shadow: 0 0 4px #a0a0a0;

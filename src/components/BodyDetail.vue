@@ -78,8 +78,8 @@
                     himself
                     the prime target of a manhunt after discovering an orb wanted by Ronan the Accuser.
                 </p>
-                <div class="mt-4">
-                    <div class="text-lg font-color	font-semibold">
+                <div class="mt-4 mb-10">
+                    <div class="text-lg font-color font-semibold">
                         Credit:
                     </div>
                     <div class="text-md font-color">
@@ -97,32 +97,11 @@ export default {
     name: 'BodyDetail',
     props:["movie_info"],
     data() {
-        return {
-
-        }
+        return {}
     },
-    methods: {
-        getThisMovie() {
-            this.axios.get("https://api.themoviedb.org/3/movie/" + this.currentId + "?api_key=f62f750b70a8ef11dad44670cfb6aa57&language=en-US").then((response) => {
-                console.log("my movie", response.data)
-                this.movie_info = response.data
-            })
-        },
-    },
-    computed: {
-        currentId() {
-            let myPath = this.$route.path
-            return myPath.split("movie/")[1]
-        }
-    },
-    mounted: {
-        computed: {
-            currentId() {
-                let myPath = this.$route.path
-                return myPath.split("movie/")[1]
-            }
-        },
-    }
+    methods: {},
+    computed: {},
+    mounted: {}
 }
 </script>
   

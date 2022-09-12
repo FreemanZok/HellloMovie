@@ -1,9 +1,8 @@
 <template>
   <div class="DetaileMovie pt-8">
-    <HeaderDetail :myTitle="getTitle()" class="mb-10" />
-    <BodyDetail />
+    <HeaderDetail :myTitle="myTitle" class="mb-10" />
+    <BodyDetail :movie_info="movie_info" />
     <router-view></router-view>
-
   </div>
 </template>
 <script>
@@ -17,21 +16,20 @@ export default {
   },
   data() {
     return {
+      my_id: null,
       movie_info: {
-        title:""
       },
+      myTitle: null,
       my_token: "f62f750b70a8ef11dad44670cfb6aa57",
     }
   },
   methods: {
     getThisMovie() {
-      this.axios.get("https://api.themoviedb.org/3/movie/" + this.currentId + "?api_key=f62f750b70a8ef11dad44670cfb6aa57&language=en-US").then((response) => {
+      this.axios.get(`https://api.themoviedb.org/3/movie/${this.my_id} ?api_key=f62f750b70a8ef11dad44670cfb6aa57&language=en-US`).then((response) => {
         console.log("my movie", response.data)
         this.movie_info = response.data;
+        this.myTitle = response.data.title
       })
-    },
-    getTitle(){
-      return this.movie_info.title
     },
   },
   computed: {
@@ -40,17 +38,28 @@ export default {
       return myPath.split("movie/")[1]
     },
   },
-  watch:{
-    movie_info(newVal){
-      if(Object.keys(newVal).length){
-        this.getTitle();
+  watch: {
+    my_id(newVal) {
+      if (newVal) {
+        this.getThisMovie();
       }
-    }
+    },
+
+  },
+  created() {
+
+    this.my_id = this.$route.path.split("movie/")[1];
+
+    this.$watch(
+      () => this.$route.params,
+      (toParams, previousParams) => {
+        // react to route changes...
+        console.log("toParams", toParams)
+        console.log("previousParams", previousParams)
+      }
+    )
   },
   mounted() {
-    
-    console.log(this.currentId)
-    this.getThisMovie()
   }
 }
 </script>

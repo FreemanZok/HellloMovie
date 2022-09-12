@@ -20,7 +20,7 @@ export default {
     props: ["myTitle"],
     methods: {
         goHome(){
-            this.$router.push({ path: `/` })
+            this.$router.push("/")
         }  
     },
 }
